@@ -24,4 +24,19 @@ describe('API PetStore Swagger - Entidade Pet', () => {
             })
     }) // Final do POST
 
+    it('GET Pet', () => {
+        return request
+            // .get('/pet/' + petId) // tradicional
+            .get(`/pet/${petId}`)    // atual
+            .then((response) => {
+                console.log('Resposta Recebida:\n', response.body)
+                expect(response.statusCode).toBe(200)
+                expect(response.body.id).toBe(petId)
+                expect(response.body.name).toBe('Snoopy')
+                expect(response.body.category.name).toBe('dog')
+                expect(response.body.tags[0].name).toBe('vacinado')
+                expect(response.body.status).toBe('available')
+            })
+    }) // Final do GET
+
 })
