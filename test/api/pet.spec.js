@@ -39,4 +39,16 @@ describe('API PetStore Swagger - Entidade Pet', () => {
             })
     }) // Final do GET
 
+    it('PUT Pet', () => {
+        const pet = require('../../vendors/json/petput.json')
+
+        return request
+            .put('/pet')
+            .send(pet)
+            .then((response) => {
+                expect(response.statusCode).toEqual(200)
+                expect(response.body.status).toEqual('sold')
+            })
+    }) // Final do Put
+
 })
