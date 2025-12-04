@@ -51,4 +51,16 @@ describe('API PetStore Swagger - Entidade Pet', () => {
             })
     }) // Final do Put
 
+    it('DELETE Pet', () => {
+        return request
+            .delete(`/pet/${petId}`)
+            .then((response) => {
+                expect(response.statusCode).toEqual(200)
+                expect(response.body.code).toEqual(200)
+                expect(response.body.type).toBe('unknown')
+                expect(response.body.message).toBe(petId.toString())
+            })
+
+    }) // Final do Delete
+
 })
