@@ -1,0 +1,4 @@
+id,category.id,category.name,name,tag0.id,tag0.name,tag1.id,tag1.name,status
+1001,1,dog,Snoopy,99,vacinado,100,beagle,available
+1002,2,cat,Garfield,99,vacinado,120,persian,available
+1003,3,fish,Nemo,88,vermifugado,130,clownfish,available
